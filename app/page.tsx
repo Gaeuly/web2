@@ -112,42 +112,42 @@ export default function HomePage() {
     { 
       id: 'moderation',
       title: "Advanced Moderation", 
-      desc: "AI-powered moderation with smart filters",
+      desc: "AI-powered moderation with smart filters and auto-punishment system",
       icon: Shield,
       color: "from-purple-500 to-indigo-600"
     },
     { 
       id: 'commands',
       title: "Custom Commands", 
-      desc: "Create unlimited personalized commands",
+      desc: "Create unlimited personalized commands with advanced scripting",
       icon: Zap,
       color: "from-indigo-500 to-purple-600"
     },
     { 
       id: 'music',
       title: "Premium Music", 
-      desc: "Crystal-clear 320kbps audio streaming",
+      desc: "Crystal-clear 320kbps audio streaming with queue management",
       icon: Music,
       color: "from-purple-600 to-pink-500"
     },
     { 
       id: 'support',
       title: "24/7 Support", 
-      desc: "Lightning-fast premium support team",
+      desc: "Lightning-fast premium support team always ready to help",
       icon: Headphones,
       color: "from-pink-500 to-purple-500"
     },
     {
       id: 'ai',
       title: "AI Assistant",
-      desc: "Smart AI-powered chat companion",
+      desc: "Smart AI-powered chat companion with context awareness",
       icon: Bot,
       color: "from-cyan-400 to-purple-500"
     },
     {
       id: 'premium',
       title: "Premium Features",
-      desc: "Exclusive tools for power users",
+      desc: "Exclusive tools and customizations for power users",
       icon: Crown,
       color: "from-yellow-400 to-purple-500"
     }
@@ -224,6 +224,37 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20" 
               variants={itemVariants}
             >
+              <motion.div 
+                variants={buttonVariants} 
+                whileHover="hover" 
+                whileTap="tap"
+              >
+                <Button
+                  size="lg"
+                  className="px-14 py-7 text-xl font-bold glass-button glow-purple-hover group relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-400/20 to-purple-600/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  <ExternalLink className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" />
+                  Invite Bot
+                  <Sparkles className="w-4 h-4 ml-2 group-hover:scale-125 transition-transform duration-300" />
+                </Button>
+              </motion.div>
+
+              <motion.div 
+                variants={buttonVariants} 
+                whileHover="hover" 
+                whileTap="tap"
+              >
+                <Button
+                  size="lg"
+                  className="px-14 py-7 text-xl font-bold glass-button border-2 border-purple-400/50 hover:border-purple-300 group relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-pink-400/10 to-pink-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  <Heart className="w-6 h-6 mr-3 group-hover:scale-110 group-hover:text-pink-300 transition-all duration-300" />
+                  Vote Now
+                </Button>
+              </motion.div>
+
               <motion.div 
                 variants={buttonVariants} 
                 whileHover="hover" 
@@ -428,35 +459,4 @@ export default function HomePage() {
       <Footer />
     </div>
   )
-}
-                whileTap="tap"
-              >
-                <Button
-                  size="lg"
-                  className="px-14 py-7 text-xl font-bold glass-button glow-purple-hover group relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-400/20 to-purple-600/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                  <ExternalLink className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" />
-                  Invite Bot
-                  <Sparkles className="w-4 h-4 ml-2 group-hover:scale-125 transition-transform duration-300" />
-                </Button>
-              </motion.div>
-
-              <motion.div 
-                variants={buttonVariants} 
-                whileHover="hover" 
-                whileTap="tap"
-              >
-                <Button
-                  size="lg"
-                  className="px-14 py-7 text-xl font-bold glass-button border-2 border-purple-400/50 hover:border-purple-300 group relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-pink-400/10 to-pink-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                  <Heart className="w-6 h-6 mr-3 group-hover:scale-110 group-hover:text-pink-300 transition-all duration-300" />
-                  Vote Now
-                </Button>
-              </motion.div>
-
-              <motion.div 
-                variants={buttonVariants} 
-                whileHover="hover"
+      }
